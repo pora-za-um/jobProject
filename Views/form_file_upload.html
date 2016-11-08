@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="ru">
+    <meta charset="UTF-8">
+    <title>Загрузка фотографии</title>
+</head>
+<body>
+<form action="/../File/upload" method="post" enctype="multipart/form-data">
+    Загрузить фотографию:
+    <br>
+    <label for="image">Файл в формате jpg</label>
+    <input type="file" id="image" name="image">
+    <br>
+    <label for="title">Название фотографии:</label>
+    <input type="text" id="title" name="title">
+    <br>
+    <label for="description">Описание</label>
+    <input type="text" id="description" name="description">
+    <br>
+    <label for="date">Дата:</label>
+    <input type="date" id="date" name="date">
+    <br>
+    <input type="submit" value="Отправить">
+</form>
+
+</body>
+</html>
