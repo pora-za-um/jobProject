@@ -11,7 +11,7 @@ abstract class Model
 
     public static function findAll()
     {
-        $db = new Db();
+        $db = new DB();
         $data = $db->query(
             'SELECT * FROM ' . static::$table,
             [],
@@ -29,7 +29,7 @@ abstract class Model
           VALUES
           ('" . $data['title'] . "', '" . $data['textimg'] . "', '" . $data['path'] . "', '" . $data['date'] . "', '" . $data['user_id'] . "')
           ";
-        $db = new Db();
+        $db = new DB();
         //Sql_execute($sql);
         return $db->execute($sql, $data);
 
@@ -85,7 +85,7 @@ abstract class Model
 
     public static function findByLoginAndPass($login, $pass)
     {
-        $db = new Db();
+        $db = new DB();
         $sql = 'SELECT login, password FROM ' . static::$table . ' WHERE login =:login AND password =:password';
         $data = $db->query($sql, [':login' => $login, ':password' => $pass], static::class);
         return $data[0] ?? false;
@@ -93,7 +93,7 @@ abstract class Model
 
     public static function findByLoginOrEmail($login, $email)
     {
-        $db = new Db();
+        $db = new DB();
         $sql = 'SELECT login, email FROM ' . static::$table . ' WHERE login =:login OR email =:email';
         $data = $db->query($sql, [':login' => $login, ':email' => $email], static::class);
         return $data[0] ?? false;
@@ -101,7 +101,7 @@ abstract class Model
 
     public static function findUserIdByLogin($login)
     {
-        $db = new Db();
+        $db = new DB();
         $sql = 'SELECT user_id FROM ' . static::$table . ' WHERE login =:login';
         $data = $db->query($sql, [':login' => $login], static::class);
         return $data[0];
@@ -110,7 +110,7 @@ abstract class Model
 
     public static function findByUserId($id)
     {
-        $db = new Db();
+        $db = new DB();
         $sql = 'SELECT * FROM ' . static::$table . ' WHERE user_id =' . $id;
         $data = $db->query($sql, [':user_id' => $id], static::class);
 
@@ -119,7 +119,7 @@ abstract class Model
 
     public static function findPhotoByUserId($id)
     {
-        $db = new Db();
+        $db = new DB();
         $sql = 'SELECT * FROM ' . static::$table . ' WHERE id =' . $id;
         $data = $db->query($sql, [':user_id' => $id], static::class);
 
@@ -128,7 +128,7 @@ abstract class Model
 
     public static function findLast5()
     {
-        $db = new Db();
+        $db = new DB();
         $data = $db->query(
             'SELECT * FROM ' . static::$table . ' ORDER BY id DESC LIMIT 5', [], static::class
         );
@@ -139,7 +139,7 @@ abstract class Model
 
     public static function findUsers()
     {
-        $db = new Db();
+        $db = new DB();
         $data = $db->query(
             'SELECT * FROM ' . static::$table . ' WHERE img_count>0 ORDER BY user_id DESC', [], static::class
         );
@@ -187,7 +187,7 @@ abstract class Model
         $tableName = static::$table;
 
         $sql = "INSERT INTO {$tableName} ({$colums}) VALUES ({$params})";
-        $db = new Db();
+        $db = new DB();
         return $db->execute($sql, $data);
     }
 

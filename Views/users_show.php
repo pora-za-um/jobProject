@@ -10,7 +10,7 @@
 
 <?php foreach ($this->users as $item): ?>
 
-    <a href="/photos/user/?id=<?php echo $item->user_id; ?>">
+    <a href="/Photos/User/?id=<?php echo $item->user_id; ?>">
         <?php echo $item->login; ?></a>
 
 <br>

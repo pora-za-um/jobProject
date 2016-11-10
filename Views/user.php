@@ -35,8 +35,8 @@
         <th><?php echo $item->date; ?></th>
 
         <?php if ($_SESSION['id'] == $_GET['id'] || ($_SESSION['login'] == 'admin')): ?>
-        <td><a href="/../../photos/delete/?id=<?php echo $item->id; ?>">Удалить</a><br><br>
-            <a href="/../../photos/edit/?id=<?php echo $item->id; ?>">Редактировать</a>
+        <td><a href="/../../Photos/Delete/?id=<?php echo $item->id; ?>">Удалить</a><br><br>
+            <a href="/../../Photos/Edit/?id=<?php echo $item->id; ?>">Редактировать</a>
 
 
         </td>

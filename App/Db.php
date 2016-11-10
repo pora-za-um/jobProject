@@ -4,7 +4,7 @@ namespace App;
 
 //require __DIR__ . '/../config.php';
 
-class Db
+class DB
 {
 
     protected $dbh;
@@ -12,7 +12,7 @@ class Db
     public function __construct()
     {
         try {
-            $this->dbh = new \PDO('mysql:host=localhost;dbname=job', 'root', '');
+            $this->dbh = new \PDO('mysql:host=localhost;dbname=job', 'default', '');
         } catch (\PDOException $e) {
             throw new \Exception('Ошибка соединения с БД');
         }

@@ -23,7 +23,7 @@ class Photos
 
         $this->view->photo = $photo;
 
-        $this->view->display(__DIR__ . '/../../views/edit.php');
+        $this->view->display(__DIR__ . '/../../Views/edit.php');
 
 
     }
@@ -52,7 +52,7 @@ class Photos
             throw new \Exception('Фото не найдено');
         }
         $this->view->photo = $photo;
-        $this->view->display(__DIR__ . '/../../views/photos/one.php');
+        $this->view->display(__DIR__ . '/../../Views/Photos/one.php');
 
     }
 
@@ -63,11 +63,11 @@ class Photos
             throw new \Exception('Пользователь не найден');
         }
         $this->view->user = $user;
-        $this->view->display(__DIR__ . '/../../views/user.php');
+        $this->view->display(__DIR__ . '/../../Views/user.php');
 
         $users = User::findUsers();
         $this->view->users = $users;
-        $this->view->display(__DIR__ . '/../../views/users_show.php');
+        $this->view->display(__DIR__ . '/../../Views/users_show.php');
     }
 
 }

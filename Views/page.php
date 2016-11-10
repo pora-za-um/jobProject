@@ -30,7 +30,7 @@ else
     <?php $_SESSION['id'] = $_GET['id']; ?>
 
 
-    <form action="/../profile/editInformation" method="post">
+    <form action="/../Profile/EditInformation" method="post">
         Изменить пароль: <input type="password" name="password"><br>
         Изменить email: <input type="email" name="email"><br>
         Изменить информацию: <input type="information" name="information"><br>

@@ -39,7 +39,7 @@ session_start();
 
 <?php endforeach; ?>
 
-<form action="/../file/edit" method="post">
+<form action="/../File/Edit" method="post">
     Изменить название: <input type="text" name="title">
     Изменить описание: <input type="text" name="textimg">
     <input type="submit">

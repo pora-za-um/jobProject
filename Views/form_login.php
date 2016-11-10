@@ -12,19 +12,19 @@ session_start();
 
 <?php if (empty($_SESSION['login']) || empty($_SESSION['password'])) { ?>
 
-    <form action="/../index/login" method="post">
+    <form action="/../Index/Login" method="post">
         Логин: <input type="text" name="login">
         Пароль: <input type="password" name="password">
         <input type="submit">
     </form>
     <br>
-    <a href="/../views/form_registration.html">Регистрация</a>
+    <a href="/../Views/form_registration.html">Регистрация</a>
 
     <?php
 } else {
     echo "Вы вошли на сайт, как " . $_SESSION['login'];
     $id = $_SESSION['id']; ?>
-    <br><a href="/profile/page/?id=<?php echo $id; ?>">Ваш профиль</a><br><a href="/views/exit.php">Выход</a>
+    <br><a href="/Profile/page/?id=<?php echo $id; ?>">Ваш профиль</a><br><a href="/Views/exit.php">Выход</a>
 
 <?php } ?>
 

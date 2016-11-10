@@ -33,9 +33,9 @@ class Profile
 
                 $user = User::findByUserId($_GET['id']);
                 $this->view->user = $user;
-                $this->view->display(__DIR__ . '/../../views/page.php');
+                $this->view->display(__DIR__ . '/../../Views/page.php');
 
-                $this->view->display(__DIR__ . '/../../views/form_file_upload.html');
+                $this->view->display(__DIR__ . '/../../Views/form_file_upload.html');
 
                 $i = new Index();
                 $i->actionShowUsers();
